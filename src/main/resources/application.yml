@@ -6,3 +6,11 @@ spring:
       uri: mongodb+srv://sathvik-poturaju:1zbyx4kQzFHvwZoi@cluster0.y8yg7.mongodb.net/music_data?retryWrites=true&w=majority&appName=Cluster0
 server:
   port: 5000
+logging:
+  level:
+    root: info
+  file:
+    name: logs/application.log
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
+    file: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
