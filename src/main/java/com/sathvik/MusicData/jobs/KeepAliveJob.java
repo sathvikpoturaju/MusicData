@@ -18,7 +18,7 @@ public class KeepAliveJob {
     @Scheduled(fixedRate = 30000)
     public void sendKeepAliveRequest() {
         try {
-            String response = this.restTemplate.getForObject(KEEP_ALIVE_SERVER_URL, String.class);
+            String response = this.restTemplate.getForObject(KEEP_ALIVE_SERVER_URL + "/keep-alive", String.class);
             log.info("Response from keep-alive-server : " + response);
         }
         catch (RestClientException e) {
