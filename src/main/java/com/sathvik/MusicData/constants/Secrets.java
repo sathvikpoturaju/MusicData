@@ -6,4 +6,5 @@ public class Secrets {
             "http://localhost:3000",
             "http://localhost:4000"
     };
+    public static final String KEEP_ALIVE_SERVER_URL = "http://localhost:4000";
 }

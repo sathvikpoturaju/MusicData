@@ -27,6 +27,7 @@ public class SecurityConfig {
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         final String artistLinksAPIRequestMatcher = "/artist-links/**";
         final String albumLinksAPIRequestMatcher = "/album-links/**";
+        final String keepAliveAPIRequestMatcher = "/keep-alive/**";
 
         return http
                 .csrf().disable()
@@ -36,6 +37,8 @@ public class SecurityConfig {
                     req.requestMatchers(artistLinksAPIRequestMatcher)
                         .permitAll();
                     req.requestMatchers(albumLinksAPIRequestMatcher)
+                        .permitAll();
+                    req.requestMatchers(keepAliveAPIRequestMatcher)
                         .permitAll();
                     req.anyRequest()
                         .authenticated();

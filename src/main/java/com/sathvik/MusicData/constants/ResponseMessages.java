@@ -13,4 +13,5 @@ public class ResponseMessages {
     public static final String ALBUM_LINKS_DELETE_SUCCESS = "Album links deleted successfully";
     public static final String ALBUM_LINKS_UPDATE_SUCCESS = "Album links updated successfully";
     public static final String API_SECRET_INVALID = "Forbidden, invalid api secret";
+    public static final String KEEP_ALIVE = "Alive";
 }
