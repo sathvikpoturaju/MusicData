@@ -1,6 +1,5 @@
 package com.sathvik.MusicData.security;
 
-import com.sathvik.MusicData.config.AppConfig;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,14 +14,13 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
+import static com.sathvik.MusicData.constants.Secrets.ALLOWED_ORIGINS;
+
 @Configuration
 @EnableWebSecurity
 public class SecurityConfig {
     @Autowired
     private ApiSecretFilter apiSecretFilter;
-
-    @Autowired
-    private AppConfig appConfig;
 
     @SuppressWarnings("removal")
     @Bean
@@ -52,12 +50,7 @@ public class SecurityConfig {
         CorsConfiguration configuration = new CorsConfiguration();
 
         configuration.setAllowedOrigins(
-                Arrays.stream(
-                        appConfig
-                                .getAppCoonfigMap()
-                                .getOrDefault("ALLOWED_ORIGINS", "")
-                                .split(",")
-                )
+                Arrays.stream(ALLOWED_ORIGINS)
                 .map(String::trim)
                 .collect(Collectors.toList())
         );
