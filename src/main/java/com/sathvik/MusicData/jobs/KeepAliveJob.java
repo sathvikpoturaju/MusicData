@@ -21,7 +21,7 @@ public class KeepAliveJob {
     @Scheduled(fixedRate = 30000)
     public void sendKeepAliveRequest() {
         try {
-            HttpEntity<Void> entity = HttpEntity.EMPTY;
+            HttpEntity<?> entity = HttpEntity.EMPTY;
             ResponseEntity<String> response = this.restTemplate.exchange(
                 KEEP_ALIVE_SERVER_URL + "/keep-alive",
                 HttpMethod.GET,
