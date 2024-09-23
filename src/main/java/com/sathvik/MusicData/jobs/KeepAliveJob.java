@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
 import org.springframework.web.client.RestTemplate;
 
-import static com.sathvik.MusicData.constants.Secrets.KEEP_ALIVE_SERVER_URL;
+import static com.sathvik.MusicData.constants.AppConstants.KEEP_ALIVE_SERVER_URL;
 
 @Component
 @AllArgsConstructor

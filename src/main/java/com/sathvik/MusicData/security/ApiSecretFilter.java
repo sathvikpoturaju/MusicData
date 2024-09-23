@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 import static com.sathvik.MusicData.constants.ResponseMessages.API_SECRET_INVALID;
-import static com.sathvik.MusicData.constants.Secrets.API_SECRET_KEY;
+import static com.sathvik.MusicData.constants.AppConstants.API_SECRET_KEY;
 
 @Component
 public class ApiSecretFilter extends OncePerRequestFilter {

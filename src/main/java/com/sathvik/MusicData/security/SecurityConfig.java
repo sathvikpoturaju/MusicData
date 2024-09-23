@@ -14,7 +14,7 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.stream.Collectors;
 
-import static com.sathvik.MusicData.constants.Secrets.ALLOWED_ORIGINS;
+import static com.sathvik.MusicData.constants.AppConstants.ALLOWED_ORIGINS;
 
 @Configuration
 @EnableWebSecurity
