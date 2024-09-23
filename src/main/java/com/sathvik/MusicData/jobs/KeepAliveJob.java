@@ -2,6 +2,9 @@ package com.sathvik.MusicData.jobs;
 
 import lombok.AllArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.HttpMethod;
+import org.springframework.http.ResponseEntity;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import org.springframework.web.client.RestClientException;
@@ -18,10 +21,15 @@ public class KeepAliveJob {
     @Scheduled(fixedRate = 30000)
     public void sendKeepAliveRequest() {
         try {
-            String response = this.restTemplate.getForObject(KEEP_ALIVE_SERVER_URL + "/keep-alive", String.class);
-            log.info("Response from keep-alive-server : " + response);
-        }
-        catch (RestClientException e) {
+            HttpEntity<Void> entity = HttpEntity.EMPTY;
+            ResponseEntity<String> response = this.restTemplate.exchange(
+                KEEP_ALIVE_SERVER_URL + "/keep-alive",
+                HttpMethod.GET,
+                entity,
+                String.class
+            );
+            log.info("Response from keep-alive-server : " + response.getBody());
+        } catch (RestClientException e) {
             log.info(e.getMessage());
         }
     }
