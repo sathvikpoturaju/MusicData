@@ -14,4 +14,5 @@ public class ResponseMessages {
     public static final String ALBUM_LINKS_UPDATE_SUCCESS = "Album links updated successfully";
     public static final String API_SECRET_INVALID = "Forbidden, invalid api secret";
     public static final String KEEP_ALIVE = "Alive";
+    public static final String ALBUM_NAME_NOT_FOUND = "Album not found with specified album name";
 }

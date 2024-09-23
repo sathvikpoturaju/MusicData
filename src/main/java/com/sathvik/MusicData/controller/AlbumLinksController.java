@@ -14,8 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import static com.sathvik.MusicData.constants.ValidationMessages.ALBUM_ID_INVALID;
-import static com.sathvik.MusicData.constants.ValidationMessages.ALBUM_ID_MANDATORY;
+import static com.sathvik.MusicData.constants.ValidationMessages.*;
 
 @RestController
 @RequestMapping(value = "/album-links")
@@ -38,6 +37,15 @@ public class AlbumLinksController {
             @PathVariable(value = "id") String id
     ) throws MusicDataException {
         return this.albumLinksService.getAlbumLinksForSongById(id);
+    }
+
+    @GetMapping(value = "/get-album-links-for-song-by-album-name")
+    public AlbumLinksDTO getAlbumLinksForSongByAlbumName(
+            @NotNull(message = ALBUM_NAME_MANDATORY)
+            @NotBlank(message = ALBUM_NAME_INVALID)
+            @RequestParam(value = "albumName") String albumName
+    ) throws MusicDataException {
+        return this.albumLinksService.getAlbumLinksForSongByAlbumName(albumName);
     }
 
     @GetMapping(value = "/get-album-links-for-all-songs")

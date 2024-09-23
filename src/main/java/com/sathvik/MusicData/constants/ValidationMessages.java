@@ -16,4 +16,5 @@ public class ValidationMessages {
     public static final String ALBUM_ID_MANDATORY = "album id is mandatory";
     public static final String ALBUM_ID_INVALID = "album id is invalid";
     public static final String BANNER_URL_MANDATORY = "bannerUrl is mandatory";
+    public static final String ALBUM_NAME_INVALID = "albumName is invalid";
 }

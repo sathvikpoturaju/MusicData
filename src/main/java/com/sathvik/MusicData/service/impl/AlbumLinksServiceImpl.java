@@ -139,4 +139,12 @@ public class AlbumLinksServiceImpl implements AlbumLinksService {
         albumLinksRepository.saveAll(albumLinksList);
         return ALBUM_LINKS_UPDATE_SUCCESS;
     }
+
+    @Override
+    public AlbumLinksDTO getAlbumLinksForSongByAlbumName(String albumName) throws MusicDataException {
+        AlbumLinks albumLinks = this.albumLinksRepository
+                .findByAlbumName(albumName)
+                .orElseThrow(() -> new MusicDataException(ALBUM_NAME_NOT_FOUND));
+        return this.albumLinksMapper.toDTO(albumLinks);
+    }
 }

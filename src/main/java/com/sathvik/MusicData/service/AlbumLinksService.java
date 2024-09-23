@@ -15,4 +15,5 @@ public interface AlbumLinksService {
     String addAlbumLinkForSongById(String id, LinkListDTO linkListDTO) throws MusicDataException;
     String deleteAlbumLinksForSongById(String id) throws MusicDataException;
     String updateStoreLogoUrl(StoreNameLogoUrl storeNameLogoUrl);
+    AlbumLinksDTO getAlbumLinksForSongByAlbumName(String albumName) throws MusicDataException;
 }

@@ -68,6 +68,7 @@ public class RestExceptionHandler {
             case ARTIST_ID_NOT_FOUND,
                  ALBUM_ID_NOT_FOUND,
                  NO_ARTISTS_FOUND,
+                 ALBUM_NAME_NOT_FOUND,
                  NO_ALBUMS_FOUND -> HttpStatus.NOT_FOUND;
             case ARTIST_NAME_EXISTS,
                  ALBUM_NAME_EXISTS -> HttpStatus.CONFLICT;
